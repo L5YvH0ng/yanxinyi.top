@@ -198,10 +198,7 @@ body {
   letter-spacing: -0.02em;
   margin: 0;
   line-height: 1.2;
-  background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-color) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-main);
 }
 
 .chinese-name {
