@@ -55,6 +55,36 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+  background-color: rgba(59, 130, 246, 0.5);
+  color: var(--text-main);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.4);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.6);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .page {
   max-width: 1000px;
   margin: 0 auto;
@@ -124,6 +154,7 @@ body {
   position: sticky;
   top: 5rem;
   height: max-content;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 @media (max-width: 768px) {
@@ -162,11 +193,15 @@ body {
 }
 
 .name-container h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 1.85rem;
+  font-weight: 800;
   letter-spacing: -0.02em;
   margin: 0;
   line-height: 1.2;
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .chinese-name {
@@ -186,10 +221,19 @@ body {
 .tag {
   background-color: var(--tag-bg);
   color: var(--text-secondary);
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.85rem;
   border-radius: 99px;
   font-size: 0.85rem;
   font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.tag:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
 .links {
@@ -281,7 +325,13 @@ body {
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  animation: fadeInUp 0.6s ease-out both;
 }
+
+.section-block:nth-child(1) { animation-delay: 0.1s; }
+.section-block:nth-child(2) { animation-delay: 0.2s; }
+.section-block:nth-child(3) { animation-delay: 0.3s; }
+.section-block:nth-child(4) { animation-delay: 0.4s; }
 
 .section-block:hover {
   transform: translateY(-4px);
