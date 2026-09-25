@@ -2,7 +2,7 @@
   /* Light Theme Colors - Premium */
   --bg-color: #f8fafc;
   --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
-  --surface-color: rgba(255, 255, 255, 0.85);
+  --surface-color: #ffffff;
   --text-main: #0f172a;
   --text-secondary: #475569;
   --text-tertiary: #64748b;
@@ -22,7 +22,7 @@
   /* Dark Theme Colors - Premium */
   --bg-color: #0b0f19;
   --bg-gradient: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
-  --surface-color: rgba(30, 41, 59, 0.7);
+  --surface-color: #1e293b;
   --text-main: #f8fafc;
   --text-secondary: #94a3b8;
   --text-tertiary: #64748b;
@@ -47,7 +47,6 @@
 body {
   font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg-gradient);
-  background-attachment: fixed;
   color: var(--text-main);
   line-height: 1.7;
   font-size: 15px;
@@ -315,8 +314,6 @@ body {
 
 .section-block {
   background-color: var(--surface-color);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-radius: 20px;
   padding: 2.5rem;
   border: 1px solid var(--border-color);
